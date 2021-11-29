@@ -1,40 +1,40 @@
 <html>
-  <header>
-    <title>Survey</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        border: none;
-      }
-      iframe {
-        height: 100%;
-        width: 100%;
-      }
-    </style>
-    <script>
-	  function loadForm(redirect = false) {
-	    if (!localStorage.getItem('form')) {
-	      localStorage.setItem('form', Math.round(Math.random()));
-	    }
+	<header>
+		<title>Survey</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				border: none;
+			}
+			iframe {
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+		<script>
+			function loadForm(redirect = false) {
+				if (!localStorage.getItem('form')) {
+					localStorage.setItem('form', Math.round(Math.random()));
+				}
 
-	    if (redirect) {
-	      if (localStorage.getItem('form') == 0) {
-		window.location.href = "https://forms.gle/SP6YUsDgwggydvHy9";
-	      } else {
-		window.location.href = "https://forms.gle/e3kSrzmheyhnLZCi9";
-	      }
-	    } else {
-	      if (localStorage.getItem('form') == 0) {
-		document.getElementById('form').src = 'https://forms.gle/SP6YUsDgwggydvHy9';
-	      } else {
-		document.getElementById('form').src = 'https://forms.gle/e3kSrzmheyhnLZCi9';
-	      }
-	    }
-	  }
-    </script>
-  </header>
-  <body  onload="loadForm(false);">
-    <iframe id="form" src="about:blank"/>
-  </body>
+				if (redirect) {
+					if (localStorage.getItem('form') == 0) {
+						window.location.href = "https://forms.gle/SP6YUsDgwggydvHy9";
+					} else {
+						window.location.href = "https://forms.gle/e3kSrzmheyhnLZCi9";
+					}
+				} else {
+					if (localStorage.getItem('form') == 0) {
+						document.getElementById('form').src = 'https://forms.gle/SP6YUsDgwggydvHy9';
+					} else {
+						document.getElementById('form').src = 'https://forms.gle/e3kSrzmheyhnLZCi9';
+					}
+				}
+			}
+		</script>
+	</header>
+	<body  onload="loadForm(false);">
+		<iframe id="form" src="about:blank"/>
+	</body>
 </html>
