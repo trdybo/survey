@@ -14,11 +14,18 @@
     </style>
 	<script>
 	  function loadForm() {
-	    document.getElementById('form').src = 'https://forms.gle/qyHh8VntAcqVLDYA9';
+	    if (!localStorage.getItem('form')) {
+		  localStorage.setItem('form', Math.round(Math.random()));
+		}
+		if (localStorage.getItem('form') == 0) {
+	      document.getElementById('form').src = 'https://trdybo.github.io/';
+	    } else {
+		  document.getElementById('form').src = 'https://forms.gle/qyHh8VntAcqVLDYA9';
+		}
 	  }
     </script>
   </header>
-  <body>
-    <iframe id="form" src="about:blank" onload="loadForm()"/>
+  <body  onload="loadForm();">
+    <iframe id="form" src="about:blank"/>
   </body>
 </html>
